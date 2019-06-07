@@ -18,14 +18,13 @@ export default function styleConstructor(theme = {}) {
       fontSize: 14,
       fontWeight: '300',
       color: appStyle.agendaDayTextColor,
-      marginTop: -5,
+      marginTop: 5,
       backgroundColor: 'rgba(0,0,0,0)'
     },
     day: {
-      width: 63,
-      alignItems: 'center',
+      width: 0,
+      alignItems: 'flex-end',
       justifyContent: 'flex-start',
-      marginTop: 32
     },
     today: {
       color: appStyle.agendaTodayColor

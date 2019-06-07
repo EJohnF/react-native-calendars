@@ -17,20 +17,18 @@ export default function styleConstructor(theme = {}) {
       height:'100%',
       width:'100%',
     },
-    calendar: { // not in use
-      flex: 1,
-      borderBottomWidth: 1,
-      borderColor: appStyle.separatorColor
-    },
     knobContainer: {
       flex: 1,
       position: 'absolute',
       left: 0,
       right: 0,
-      height: 24,
+      height: 26,
       bottom: 0,
       alignItems: 'center',
-      backgroundColor: appStyle.calendarBackground
+      backgroundColor: appStyle.calendarBackground,
+      borderTopWidth: 2,
+      borderTopColor: '#f1f3f7',
+      overflow: 'hidden',
     },
     weekday: {
       width: 32,
@@ -40,7 +38,7 @@ export default function styleConstructor(theme = {}) {
     },
     reservations: {
       flex: 1,
-      marginTop: 104,
+      marginTop: 103,
       backgroundColor: appStyle.backgroundColor
     },
     ...(theme[STYLESHEET_ID] || {})

@@ -5,6 +5,7 @@ import {
   View
 } from 'react-native';
 import PropTypes from 'prop-types';
+import LinearGradient from 'react-native-linear-gradient';
 import {shouldUpdate} from '../../../component-updater';
 
 import styleConstructor from './style';
@@ -88,8 +89,16 @@ class Day extends Component {
         activeOpacity={marking.activeOpacity}
         disabled={marking.disableTouchEvent}
       >
+        <LinearGradient
+          colors={marking.selected ? ['#19b0e9', '#168080'] : ['#ffffff', '#ffffff']}
+          useAngle
+          angle={135}
+          angleCenter={{ x: 0.5, y: 0.5}}
+          style={containerStyle}
+          >
         <Text allowFontScaling={false} style={textStyle}>{String(this.props.children)}</Text>
         {dot}
+        </LinearGradient>
       </TouchableOpacity>
     );
   }

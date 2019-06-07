@@ -4,7 +4,7 @@ import {
   Text,
 } from 'react-native';
 import PropTypes from 'prop-types';
-
+import LinearGradient from 'react-native-linear-gradient';
 import styleConstructor from './style';
 import {shouldUpdate} from '../../../component-updater';
 
@@ -81,6 +81,17 @@ class Day extends Component {
         activeOpacity={marking.activeOpacity}
         disabled={marking.disableTouchEvent}
       >
+        <LinearGradient
+          colors={['#19b0e9', '#168080']}
+          start={{ x: 0.0, y: 0.6 }}
+          end={{ x: 0.1, y: 1.4 }}
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            left: 0
+          }} />
         <Text allowFontScaling={false} style={textStyle}>{String(this.props.children)}</Text>
       </TouchableOpacity>
     );

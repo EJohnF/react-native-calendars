@@ -130,7 +130,10 @@ class ReactComp extends Component {
     if (res && res.length) {
       return res.map((reservation, i) => {
         return {
-          reservation,
+          reservation : {
+            ...reservation,
+            day: day.toString('yyyy-MM-dd'),
+          },
           date: i ? false : day,
           day
         };
@@ -176,7 +179,6 @@ class ReactComp extends Component {
       }
       iterator.addDays(1);
     }
-
     return {reservations, scrollPosition};
   }
 
